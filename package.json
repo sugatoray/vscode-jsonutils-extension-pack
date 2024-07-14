@@ -1,0 +1,78 @@
+{
+    "name": "vscode-jsonutils-extension-pack",
+    "displayName": "JSON Utilities Extension Pack",
+    "description": "Popular Visual Studio Code extensions for JSON Utilities",
+    "version": "0.0.1",
+    "publisher": "sugatoray",
+    "author": {
+        "name": "Sugato Ray",
+        "email": "sugatoray.dev@gmail.com"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sugatoray/vscode-jsonutils-extension-pack"
+    },
+    "bugs": {
+        "url": "https://github.com/sugatoray/vscode-jsonutils-extension-pack/issues"
+    },
+    "icon": "icon.png",
+    "galleryBanner": {
+        "color": "#69e882",
+        "theme": "dark"
+    },
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "keywords": [
+        "json",
+        "yaml",
+        "xml",
+        "csv",
+        "json-converters",
+        "json-editors",
+        "json-formatters",
+        "json-validators",
+        "json-sorters",
+        "json-generators",
+        "json-translators",
+        "json-visualization",
+        "yaml-to-json",
+        "xml-to-json",
+        "json-to-csv",
+        "json-to-code",
+        "utilities",
+        "visualization"
+    ],
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [
+        "ZainChen.json",
+        "nickdemayo.vscode-json-editor",
+        "zhoufeng.json-helper",
+        "sissel.json-script-tag",
+        "ClemensPeters.format-json",
+        "oliversturm.fix-json",
+        "rioj7.vscode-json-validate",
+        "richie5um2.vscode-sort-json",
+        "Thinker.sort-json",
+        "Dadroit.dadroit-json-generator",
+        "quicktype.quicktype",
+        "khaeransori.json2csv",
+        "buianhthang.xml2json",
+        "hilleer.yaml-plus-json",
+        "ahebrank.yaml2json",
+        "jeffjorczak.auto-translate-json",
+        "AykutSarac.jsoncrack-vscode",
+        "DutchIgor.json-viewer",
+        "ChaunceyKiwi.json-tree-view"
+    ],
+    "pricing": "Free",
+    "scripts": {
+        "deploy": "vsce publish --yarn"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.70.0"
+    }
+}
