@@ -18,7 +18,7 @@
     },
     "icon": "icon.png",
     "galleryBanner": {
-        "color": "#69e882",
+        "color": "#00a3a4",
         "theme": "dark"
     },
     "engines": {
