@@ -1,1 +1,1 @@
-# vscode-configutils-extension-pack
+# vscode-jsonutils-extension-pack
