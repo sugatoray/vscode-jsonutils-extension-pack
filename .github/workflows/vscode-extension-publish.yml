@@ -1,0 +1,40 @@
+# source:
+# - https://code.visualstudio.com/api/working-with-extensions/continuous-integration#github-actions
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - master
+  release:
+    types:
+    - created
+
+name: Publish VSCode Extension
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Install Node.js + npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install npm
+        run: npm install
+      # - uses: lannonbr/vsce-action@3.0.0
+      - name: Install VSCE
+        run: npm install -g vsce
+      - name: Install OVSX
+        run: npm install -g ovsx
+      - name: Publish Extension - VSCE (to VS Marketplace)
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: vsce publish -p $VSCE_PAT
+      - name: Publish Extension - OVSX (to Open-VSX.org)
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: |
+          echo -e "skipping OVSX publishing" # ovsx publish -p $OVSX_PAT
+        
