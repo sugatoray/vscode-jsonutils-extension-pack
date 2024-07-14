@@ -4,6 +4,8 @@
 .secrets/
 .tours/
 .cspell/
+.history
+.trash
 Makefile
 .gitignore
 *.vsix
