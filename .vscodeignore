@@ -1,0 +1,17 @@
+.vscode/
+.github/
+.artifacts/
+.secrets/
+.tours/
+.cspell/
+Makefile
+.gitignore
+*.vsix
+.DS_Store
+docs/
+composer/
+Justfile
+
+**/*.ts
+**/tsconfig.json
+!file.ts
