@@ -14,7 +14,7 @@
 
 # VS Code {{ extension_label }}
 
-This extension pack packages some of the most popular (and some of my favorite) Text Utilities' related extensions.
+This extension pack packages some of the most popular (and some of my favorite) JSON Utilities' related extensions.
 
 ## Extensions Included
 
