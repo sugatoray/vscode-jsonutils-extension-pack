@@ -2,7 +2,7 @@
     "name": "vscode-jsonutils-extension-pack",
     "displayName": "JSON Utilities Extension Pack",
     "description": "Popular Visual Studio Code extensions for JSON Utilities",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "sugatoray",
     "author": {
         "name": "Sugato Ray",

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+Update banner color to `#00a3a4`.
+
 ## 0.0.1
 
 - Initial release.
