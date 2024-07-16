@@ -43,7 +43,11 @@ __Enjoy!__ 🎁 ✨ 🎉
 
 The easiest way to install is directly from within VS Code (search extensions for `{{ extension_id }}`).
 
-You can also install from the [VS Code Extension Marketplace][#vsce-marketplace-url] <!---, the [Open VSX Registry][#ovsx-registry] or ---> directly from a [VISX extension file][#vsix-install].
+You can also install from the [VS Code Extension Marketplace][#vsce-marketplace-url] 
+<!---
+, the [Open VSX Registry][#ovsx-registry] 
+---> 
+or directly from a [VISX extension file][#vsix-install].
 
 [#ovsx-registry]: https://open-vsx.org/extension/{{ extension_publisher }}/{{ extension_name }}
 [#vsix-install]: https://marketplace.visualstudio.com/items?itemName={{ extension_id }}#visx-install
