@@ -136,6 +136,7 @@ class ExtensionPackMetadata:
     num_extensions: int
     extension_id: str
     extension_label: str
+    extension_label_short: str
     extension_publisher: str
     extension_name: str
     output_folder: str
@@ -174,6 +175,7 @@ class ExtensionPackMetadata:
         self.num_extensions = len(self.extensions)
 
         self.extension_label = self._get_extension_label()
+        self.extension_label_short = self.extension_label.replace("Extension Pack", "").strip()
         self.extension_publisher = self._get_extension_publisher()
         self.extension_name = self._get_extension_name()
         self.extension_id = f"{self.extension_publisher}.{self.extension_name}"
@@ -254,6 +256,7 @@ class ExtensionPackMetadata:
             readme = f.read()
 
         readme = re.sub("{{ extension_label }}", self.extension_label, readme)
+        readme = re.sub("{{ extension_label_short }}", self.extension_label_short, readme)
         readme = re.sub("{{ extension_id }}", self.extension_id, readme)
         readme = re.sub("{{ extension_publisher }}", self.extension_publisher, readme)
         readme = re.sub("{{ extension_name }}", self.extension_name, readme)
