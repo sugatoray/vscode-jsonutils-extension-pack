@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+Update README and upgrade maintenance automation.
+
 ## 1.0.0
 
 Update banner color to `#00a3a4`.
