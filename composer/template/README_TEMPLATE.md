@@ -72,5 +72,5 @@ You can follow me (Sugato Ray) here.
 
 > __Attribution__: 👏👏
 >
-> The icon used here was downloaded and adapted from <a href="https://www.flaticon.com/free-icons/server" title="server icons">this</a> icon on Flaticon.com.
-> 
+> The icon used here was downloaded and adapted from <a href="https://www.flaticon.com/free-icon/json-file_6394065" title="json file">this</a> icon on Flaticon.com.
+>
