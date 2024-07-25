@@ -280,5 +280,6 @@
         "prerelease",
         "releases/**"
     ],
-    "dbt.queryLimit": 500
+    "dbt.queryLimit": 500,
+    "taipyStudio.gUI.elementsFilePaths": []
 }
