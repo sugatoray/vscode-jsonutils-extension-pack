@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+Update README and upgrade maintenance automation.
+
 ## 1.1.0
 
 Update README and upgrade maintenance automation.
