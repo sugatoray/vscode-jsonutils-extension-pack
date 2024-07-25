@@ -22,13 +22,13 @@ README_TEMPLATE_FILENAME: str = "README_TEMPLATE.md"
 MD_TABLE_TEMPLATE: Dict[str, str] = dict(
     header=dedent(
         """\
-        | SL# | Extension |
-        |:---:|:---|
+        | SL# | Extension | VSCodeMinVer |
+        |:---:|:---|---:|
     """
     ),
     rowdata=dedent(
         """\
-        | `{idx}` | 🎁 [{label}](https://marketplace.visualstudio.com/items?itemName={extension_id}) <br/> <p><ul> {description}. </ul></p> |
+        | `{idx}` | 🎁 [{label}](https://marketplace.visualstudio.com/items?itemName={extension_id}) ![Version](https://img.shields.io/visual-studio-marketplace/v/{extension_id}) ![INSTALLS](https://img.shields.io/visual-studio-marketplace/i/{extension_id}) <br/> <p><ul> {description}. </ul></p> | `{vscode_min_ver}` |
     """
     ),
 )

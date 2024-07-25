@@ -27,6 +27,12 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 <!-- ### TABLE: END ### -->
 
+<!-- markdownlint-disable MD041 MD052 MD053 -->
+
+> 💡 **`VSCodeMinVer`** is the minimum version of VS Code required for the corresponding extension to work.
+
+<!-- markdownlint-enable MD041 MD052 MD053 -->
+
 <!-- Sample row to fill up: __LABEL__, __EXTN__, __DESC__
 
 | `01` | 🎁 [__LABEL__](https://marketplace.visualstudio.com/items?itemName=__EXTN__) <br/> <p><ul> __DESC__. </ul></p> |
@@ -37,7 +43,7 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 Open a PR and I'd be happy to take a look.
 
-__Enjoy!__ 🎁 ✨ 🎉
+**Enjoy!** 🎁 ✨ 🎉
 
 ## Installation
 
@@ -70,7 +76,7 @@ You can follow me (Sugato Ray) here.
 - Twitter: [@sugatoray](https://twitter.com/sugatoray)
 - GitHub: [@sugatoray](https://github.com/sugatoray)
 
-> __Attribution__: 👏👏
+> **Attribution**: 👏👏
 >
 > The icon used here was downloaded and adapted from <a href="https://www.flaticon.com/free-icon/json-file_6394065" title="json file">this</a> icon on Flaticon.com.
 >

@@ -22,13 +22,14 @@ README_TEMPLATE_FILENAME: str = "README_TEMPLATE.md"
 MD_TABLE_TEMPLATE: Dict[str, str] = dict(
     header=dedent(
         """\
-        | SL# | Extension |
-        |:---:|:---|
+        | SL# | Extension | VSCodeMinVer |
+        |:---:|:---|---:|
     """
     ),
+    ## | `{idx}` | 🎁 [{label}](https://marketplace.visualstudio.com/items?itemName={extension_id}) **`Version: v{latestVersion}`** ![INSTALLS](https://img.shields.io/visual-studio-marketplace/i/{extension_id}) <br/> <p><ul> {description}. </ul></p> | `{vscode_min_ver}` |
     rowdata=dedent(
         """\
-        | `{idx}` | 🎁 [{label}](https://marketplace.visualstudio.com/items?itemName={extension_id}) <br/> <p><ul> {description}. </ul></p> |
+        | `{idx}` | 🎁 [{label}](https://marketplace.visualstudio.com/items?itemName={extension_id}) <br/> <p><ul> {description}. </ul></p> | `{vscode_min_ver}` |
     """
     ),
 )
@@ -48,13 +49,27 @@ def get_extension_metadata_from_marketplace_dump(filepath: str) -> dict:
 
     with open(filepath, "r") as f:
         data = json.load(f)
+    latest_version_data: dict = data.get("versions", [])[0]
     return dict(
         pubisherName=data.get("publisher", {}).get("publisherName", ""),
         extensionName=data.get("extensionName", ""),
         displayName=data.get("displayName", ""),
         shortDescription=data.get("shortDescription", ""),
-        latestVersion=data.get("versions", [])[0].get("version", ""),
+        latestVersion=latest_version_data.get("version", ""),
+        vscodeMinVer=get_vscode_extension_min_version(latest_version_data).get("vscodeMinVer", ""),
     )
+
+
+def get_vscode_extension_min_version(latest_version_data: dict):
+    """Extract VS Code Minimum Version from the latest version data 
+       of the extension metadata.
+    """
+    lvd_props = latest_version_data.get("properties", [{},])
+    for prop in lvd_props:
+        k = prop.get("key", "")
+        v = prop.get("value", "")
+        if k == "Microsoft.VisualStudio.Code.Engine":
+            return {"vscodeMinVer": v.replace("^","")}
 
 
 def dump_extension_metadata(extension_id: str, output_folder: str) -> None:
@@ -64,7 +79,7 @@ def dump_extension_metadata(extension_id: str, output_folder: str) -> None:
     output_filepath = os.path.join(output_folder, filename)
     command = f"vsce show --json {extension_id}"
     with open(output_filepath, "w") as f:
-        subprocess.run(shlex.split(command), stdout=f)
+        subprocess.run(shlex.split(command), stdout=f, stderr=subprocess.DEVNULL)
 
 
 def get_dumped_metadata_files(
@@ -102,10 +117,14 @@ def prepare_table(
     ndigits = len(str(num_extensions))
     for idx, filepath in enumerate(dumped_metadata_files):
         metadata = get_extension_metadata_from_marketplace_dump(filepath)
+        json.dumps(metadata)
         extension_id = f"{metadata.get('pubisherName')}.{metadata.get('extensionName')}"
         label = metadata.get("displayName")
         description = metadata.get("shortDescription")
+        description = description if description[-1] != "." else description[:-1]
         idx_text = f"{idx+1}".zfill(ndigits)
+        latest_version = metadata.get("latestVersion")
+        vscode_min_ver = metadata.get("vscodeMinVer")
         if extension_id.lower() in extensions:
             # only include the extensions that are in the extension pack
             if enforce_lowrcase_extension_id:
@@ -115,6 +134,8 @@ def prepare_table(
                 extension_id=extension_id,
                 description=description,
                 idx=idx_text,
+                latest_version=latest_version,
+                vscode_min_ver=vscode_min_ver,
             )
             table.append(rowdata)
     return table
